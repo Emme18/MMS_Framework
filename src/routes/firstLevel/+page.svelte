@@ -7,3 +7,6 @@
  Preloader/Animation als Übergang zum Spiel (hier)
  Redirect, wenn die Runde verloren wurde, damit wieder im Idle Screen gelandet wird
  AUCH sinnvoll sind Unterseiten wie Credits oder Anleitung -->
+
+
+ <p> Test </p>
