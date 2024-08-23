@@ -27,7 +27,7 @@
 
 <div class="w-full bg-slate-300 h-full text-center">
     <div class="pt-72">
-        <a href="/Charakterwahl">
+        <a href="/Spiel_starten">
             <Button />
         </a>
 
