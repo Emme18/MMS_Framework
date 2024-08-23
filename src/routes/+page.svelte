@@ -27,7 +27,7 @@
 
 <div class="w-full bg-slate-300 h-full text-center">
     <div class="pt-72">
-        <a href="/firstLevel">
+        <a href="/Charakterwahl">
             <Button />
         </a>
 
@@ -42,3 +42,9 @@
         {/each}
     </div>
 </div>
+
+
+
+
+
+<!-- Diese page.svelte als Willkommenseite definieren, Viel Spaß bei Pingu Run! - ButtonClick und los gehts -->
