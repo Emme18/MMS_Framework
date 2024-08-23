@@ -20,7 +20,7 @@
 </script>
 
 
-<h1>Welcome to SvelteKit</h1>
+<h1>Welcome to SvelteKit - über h + enter im Browser öffnen, evtl. nach npm run preview im Terminal </h1>
 <p class="bg-green-50 p-4">Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 
 <p>Have fun!</p>
