@@ -1,7 +1,20 @@
 <script>
 	import Headline from '/src/components/headline.svelte';
     import Logo from "$lib/Logo.png";
-    import Anleitung from "/src/components/anleitung_button.svelte";
+
+    import Tastatur from '$lib/Tastatur.svg';
+
+    let showTastatur = false;
+
+    function toggleTastatur(event) {
+    if (event.key === 'Escape') {
+    showTastatur = false;
+    } else {
+    showTastatur = !showTastatur;
+    }
+    };
+
+    document.addEventListener('keydown', toggleTastatur);
 
     import { onMount } from 'svelte';
 
@@ -42,13 +55,19 @@
     <div> </div>
 </div>
 
-<a href="/Charakterwahl">
-    <Anleitung />
-</a>
+<button style="background-color: #004AAD; 
+font-family: Carter One, sans-serif; 
+font-size: 30px;" class="p-4 text-white" on:click={toggleTastatur}>Anleitung</button>
 
-<div class="Charakter">
+{#if showTastatur}
+ <div class="fixed top-0 left-0 w-1/2 h-1/2 bg-white overflow-hidden" />
+ <div class="fixed top-20 left-0 w-1/2 h-1/2 overflow-hidden">
+ <img src={Tastatur} alt="Tastatur" class="w-full h-full object-cover" />
+ </div>
+{/if}
+
+<div class="Schrift-Wahl">
     <h1 class="w-full my-10 py-10 text-3xl text-center">Wähle Deinen Pinguin</h1>
-    <!-- Button mit Anleitung, die sich öffnet -->
 </div>
 
 <div class="Pinguine">
