@@ -3,6 +3,6 @@ export let text = "Platzhalter";
 </script>
 
 
-<h1 class="text-xl uppercase font-bold">
+<h1 class="text-4xl uppercase font-bold">
     {text}
 </h1>
