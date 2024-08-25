@@ -1,1 +1,1 @@
-<button class="bg-purple-400 rounded p-4 text-white"> Bsp. Button für Erstellung neuer Dateien </button>
+<button class="bg-purple-400 rounded p-4 text-white"> Los Geht's </button>

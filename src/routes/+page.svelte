@@ -1,22 +1,6 @@
 <script>
 	import Button from "../components/button.svelte";
 	import Headline from "../components/headline.svelte";
-
-    import { onMount } from 'svelte';
-
-    let contents = [];
-
-    onMount(async () => {
-        const response = await fetch("https://api.sampleapis.com/coffee/hot");
-
-        if (response.ok) {
-            const data = await response.json();
-            contents = data;
-        } else {
-            console.error("Failed to fetch data:", response.status.Text);
-        }
-    });
-    
 </script>
 
 
@@ -32,14 +16,6 @@
         </a>
 
         <Headline text="Überschrift" />
-    </div>
-
-    <div class="md:flex-wrap md:flex flex-row w-2/3 m-auto text-center justify-center gap-4 py-20 px-16">
-        {#each contents as content} 
-        <div class="bg-lime-400 rounded-lg p-8"> 
-            <p>{content.title}</p>
-        </div>   
-        {/each}
     </div>
 </div>
 
