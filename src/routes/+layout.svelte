@@ -15,14 +15,14 @@
     <div class="Seitenende">
 
     <p class="main-footer">
-    <u><b>Impressum</b></u><br><br>
+    <u>Impressum</u><br><br>
     Emelie Rademacher<br>
     Musterstraße 1<br>
     12345 Musterstadt<br>
-    <b>Matrikelnummer:</b> 1674349<br>
-    <b>Tel.:</b> 01234 567890<br>
-    <b>E-Mail:</b> emelie.rademacher@stud.hs-hannover.de<br>
-    <b>Web-Adresse:</b> hedwig.wp.hs-hannover.de/home.php</p>
+    Matrikelnummer: 1674349<br>
+    Tel.: 01234 567890<br>
+    E-Mail: emelie.rademacher@stud.hs-hannover.de<br>
+    Web-Adresse: hedwig.wp.hs-hannover.de/home.php</p>
 
   <!--   <img class="last-picture" src="/Logo.png" alt="Logo" width="200" height="200"> -->
     <img class="last-picture" src={Logo} alt="Logo" width="200" height="200"/>
@@ -31,7 +31,7 @@
 
     </div>
       
-    <p class="end-footer"><b>© 2022 Backrezepte</b></p>
+    <p class="end-footer">© 2024 Pingu Run</p>
 
   </footer>  
 
@@ -49,9 +49,12 @@ footer {
 	justify-content: space-between;
 	background-color: #004AAD;
 	padding: 20px;
-	margin: auto;
-	max-width: 960px;
 	font-family: Carter One, sans-serif;
+  position: sticky; 
+  bottom: 0; 
+  left: 0; 
+  width: 100%; 
+  margin: 0;
 }
 
 .main-footer {
@@ -76,5 +79,10 @@ footer {
 	padding-top: 5px;
 	font-family: Carter One, sans-serif;
 	border-top: solid 1px #FFFFFF;
+  position: sticky; 
+  bottom: 0; 
+  left: 0; 
+  width: 100%; 
+  margin: 0;
 }
 </style>
