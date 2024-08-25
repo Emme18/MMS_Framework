@@ -71,26 +71,6 @@ footer {
 
 
 /* Impressum */
-/*
-.Seitenanfang {
-	display: flex;
-	justify-content: center;
-  align-items: center;
-	background-color: #004AAD;
-	padding: 20px;
-	font-family: Carter One, sans-serif;
-    position: sticky; 
-    bottom: 0; 
-    left: 0; 
-    width: 100%; 
-    margin: 0;
-}
-
-.first-picture {
-	text-align: right;
-	order: -1;
-  margin-right: auto;
-} */
 
 .Seitenanfang {
 	display: flex;
@@ -100,6 +80,7 @@ footer {
   background-color: #004AAD;
 	padding: 0;
 	font-family: Carter One, sans-serif;
+  color: white ;
 	position: sticky; 
 	bottom: 0; 
 	left: 0; 
@@ -111,6 +92,18 @@ footer {
   order: -1;
 }
 
+.Content-Impressum {
+  font-family: Carter One, sans-serif;
+  font-size: 16px; 
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex; 
+  text-align: left;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 4px;
+}
 
   /*  
   Wolken im Hintergund des Spiels
