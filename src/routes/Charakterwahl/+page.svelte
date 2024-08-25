@@ -1,6 +1,7 @@
 <script>
 	import Headline from '/src/components/headline.svelte';
     import Logo from "$lib/Logo.png";
+    import Anleitung from "/src/components/anleitung_button.svelte";
 
     import { onMount } from 'svelte';
 
@@ -40,6 +41,10 @@
     <div><Headline text="Spiel starten" /></div>
     <div> </div>
 </div>
+
+<a href="/Charakterwahl">
+    <Anleitung />
+</a>
 
 <div class="Charakter">
     <h1 class="w-full my-10 py-10 text-3xl text-center">Wähle Deinen Pinguin</h1>
