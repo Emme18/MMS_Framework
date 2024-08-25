@@ -24,6 +24,7 @@
             E-Mail: emelie.rademacher@stud.hs-hannover.de<br></p>
         </div>
         <div>
+            <!-- svelte-ignore a11y-missing-attribute -->
             <iframe src="https://giphy.com/embed/nguAwtOo4nxAY" width="240" height="240" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/nguAwtOo4nxAY"></a></p>
         </div>
     </div>
