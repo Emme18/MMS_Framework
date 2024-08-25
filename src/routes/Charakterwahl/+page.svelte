@@ -35,7 +35,7 @@
 <!--Redirect, wenn die Runde verloren wurde, damit wieder im Idle Screen gelandet wird -->
 
 
- <div class="Seitenanfang">
+<div class="Seitenanfang">
     <div><a href="/Charakterwahl"><img class="logo" src={Logo} alt="Logo" width="100" height="100"/></a></div>
     <div><Headline text="Spiel starten" /></div>
     <div> </div>

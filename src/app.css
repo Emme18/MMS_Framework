@@ -116,6 +116,7 @@ footer {
   display: flex;
   flex-direction: row;
   width: 100%;
+  margin-top: -100px;
 }
 
 /* Pinguin 1 */
@@ -788,7 +789,20 @@ Pinguin 3 */
 }
 
 /* Pinguin 3 Ende */
+.penguin, .penguin2, .penguin3 {
+  animation: fadeIn 2s;
+ }
 
+ @keyframes fadeIn {
+  0% {
+   opacity: 0;
+   transform: scale(0.5);
+  }
+  100% {
+   opacity: 1;
+   transform: scale(1);
+  }
+ }
 
   /*  
   Wolken im Hintergund des Spiels

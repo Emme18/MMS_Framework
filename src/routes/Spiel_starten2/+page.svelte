@@ -1,5 +1,12 @@
-<div>
-    <h1> Spiel startet hier </h1>
+<script>
+	import Headline from '/src/components/headline.svelte';
+    import Logo from "$lib/Logo.png";
+</script>
+
+<div class="Seitenanfang">
+    <div><a href="/Charakterwahl"><img class="logo" src={Logo} alt="Logo" width="100" height="100"/></a></div>
+    <div><Headline text="Lass den Pinguin nicht verlieren ..." /></div>
+    <div> </div>
 </div>
 
 
