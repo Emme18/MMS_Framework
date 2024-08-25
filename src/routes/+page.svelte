@@ -1,23 +1,21 @@
 <script>
 	import Button from "../components/button.svelte";
-	import Headline from "../components/headline.svelte";
+    import Logo from "$lib/Logo.png";
 </script>
 
 
-<h1>Welcome to SvelteKit - über h + enter im Browser öffnen, evtl. nach npm run preview im Terminal </h1>
-<p class="bg-green-50 p-4">Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 
-<p>Have fun!</p>
-
-<div class="w-full bg-slate-300 h-full text-center">
-    <div class="pt-72">
-        <a href="/Spiel_starten">
+<!-- <div class="w-full bg-slate-300 h-full text-center"> -->
+<div class="flex items-center justify-center h-screen">
+    <div class="Anfang">  
+        <img class="last-picture" src={Logo} alt="Logo" width="200" height="200"/>    
+        <a href="/Charakterwahl">
             <Button />
         </a>
-
-        <Headline text="Überschrift" />
-    </div>
+    </div>  
 </div>
+
+
 
 
 
