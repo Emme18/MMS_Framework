@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Carter One';
+    font-style: normal;
+    font-weight: 350;
+    src: url('/fonts/Carter_One/CarterOne-Regular.ttf');
+}
