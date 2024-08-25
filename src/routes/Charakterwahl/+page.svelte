@@ -1,13 +1,38 @@
 <script>
 	import Headline from '/src/components/headline.svelte';
     import Logo from "$lib/Logo.png";
+
+    import { onMount } from 'svelte';
+
+    let pinguinElement;
+
+    onMount(() => {
+        pinguinElement = document.querySelector('.penguin');
+
+        pinguinElement.addEventListener('click', () => {
+        // Öffne die Seite mit dem Namen "Spiel_starten"
+        window.location.href = '/Spiel_starten';
+        });
+    });
+    onMount(() => {
+        pinguinElement = document.querySelector('.penguin2');
+
+        pinguinElement.addEventListener('click', () => {
+        // Öffne die Seite mit dem Namen "Spiel_starten2"
+        window.location.href = '/Spiel_starten2';
+        });
+    });
+    onMount(() => {
+        pinguinElement = document.querySelector('.penguin3');
+
+        pinguinElement.addEventListener('click', () => {
+        // Öffne die Seite mit dem Namen "Spiel_starten3"
+        window.location.href = '/Spiel_starten3';
+        });
+    });
 </script>
 
-<!-- sinnvoll: hier den eigentlichen Spielinhalt verbauen
- Hauptseite (Index) von routes als Idle Screen, "wähle deinen Pinguin"
- Preloader/Animation als Übergang zum Spiel (hier)
- Redirect, wenn die Runde verloren wurde, damit wieder im Idle Screen gelandet wird
- AUCH sinnvoll sind Unterseiten wie Credits oder Anleitung -->
+<!--Redirect, wenn die Runde verloren wurde, damit wieder im Idle Screen gelandet wird -->
 
 
  <div class="Seitenanfang">
@@ -18,6 +43,7 @@
 
 <div class="Charakter">
     <h1 class="w-full my-10 py-10 text-3xl text-center">Wähle Deinen Pinguin</h1>
+    <!-- Button mit Anleitung, die sich öffnet -->
 </div>
 
 <div class="Pinguine">
