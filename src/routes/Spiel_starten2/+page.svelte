@@ -42,3 +42,24 @@
       <div class="beak-bottom2"></div>
     </div>
   </div> 
+
+  <style>
+  .penguin2 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateX(0);
+  animation: move 5s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(400%);
+  }
+}
+
+
+  </style>

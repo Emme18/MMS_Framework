@@ -42,3 +42,19 @@
       <div class="beak-bottom"></div>
     </div>
 </div>  
+
+<style>
+.penguin {
+  position: relative;
+  animation: walk 2s linear infinite;
+}
+
+@keyframes walk {
+  0% {
+    transform: translateX(-100);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+</style>
