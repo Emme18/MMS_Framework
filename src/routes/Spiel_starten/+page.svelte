@@ -20,25 +20,25 @@
 </div> 
 
 <div class="penguin">
-    <div class="penguin-head">
-        <div class="face left"></div>
-        <div class="face right"></div>
-        <div class="chin"></div>
-        <div class="eye left">
+    <div class="penguin-bottom">
+      <div class="right-hand"></div>
+      <div class="left-hand"></div>
+      <div class="right-feet"></div>
+      <div class="left-feet"></div>
+    </div>
+    <div class="penguin-top">
+      <div class="right-cheek"></div>
+      <div class="left-cheek"></div>
+      <div class="belly"></div>
+      <div class="right-eye">
         <div class="eye-lid"></div>
-        </div>
-        <div class="eye right">
+      </div>
+      <div class="left-eye">
         <div class="eye-lid"></div>
-        </div>
-        <div class="blush left"></div>
-        <div class="blush right"></div>
-        <div class="beak top"></div>
-        <div class="beak bottom"></div>
+      </div>
+      <div class="blush-right"></div>
+      <div class="blush-left"></div>
+      <div class="beak-top"></div>
+      <div class="beak-bottom"></div>
     </div>
-    <div class="penguin-body">
-        <div class="arm left"></div>
-        <div class="arm right"></div>
-        <div class="foot left"></div>
-        <div class="foot right"></div>
-    </div>
-    </div>
+</div>  
