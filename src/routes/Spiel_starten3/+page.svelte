@@ -7,14 +7,21 @@
   let penguinPosition = 0;
 
   onMount(() => {
-    document.addEventListener('keydown', (event) => {
-      if (event.key === ' ') {
-        // Implementieren Sie die Funktion, die aufgerufen wird, wenn das space:down-Event ausgelöst wird
-        penguinPosition -= 10;
-      }
-    });
+  document.addEventListener('keydown', (event) => {
+  if (event.key === ' ') {
+  penguinPosition -= 10;
+  }
+  });
+
+  document.addEventListener('keyup', (event) => {
+  if (event.key === ' ') {
+  penguinPosition += 10;
+  }
+  });
   });
 </script>
+
+
 
 <div class="Seitenanfang">
   <div><a href="/Charakterwahl"><img class="logo" src={Logo} alt="Logo" width="100" height="100"/></a></div>
