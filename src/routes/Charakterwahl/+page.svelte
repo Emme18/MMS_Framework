@@ -60,8 +60,8 @@ font-family: Carter One, sans-serif;
 font-size: 30px;" class="p-4 text-white" on:click={toggleTastatur}>Anleitung</button>
 
 {#if showTastatur}
- <div class="fixed top-0 left-0 w-1/2 h-1/2 bg-white overflow-hidden" />
- <div class="fixed top-20 left-0 w-1/2 h-1/2 overflow-hidden">
+ <div class="fixed top-0 left-0 w-1/2 h-1/2 bg-white overflow-hidden z-10" />
+ <div class="fixed top-20 left-0 w-1/2 h-1/2 overflow-hidden z-10 order-1">
  <img src={Tastatur} alt="Tastatur" class="w-full h-full object-cover" />
  </div>
 {/if}
