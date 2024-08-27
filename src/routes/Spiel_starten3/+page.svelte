@@ -78,6 +78,30 @@ onMount(() => {
 
   moveAchteck();
  });
+
+ onMount(() => {
+  const iceberg = document.querySelector('.iceberg');
+  iceberg.style.position = 'absolute';
+  iceberg.style.top = '-100px'; // Höhe anpassen
+  iceberg.style.zIndex = '8';
+  const bahn2 = document.querySelector('.bahn2');
+  const screenWidth = window.innerWidth;
+  const screenHeight = window.innerHeight;
+
+  let icebergX = screenWidth;
+  let icebergSpeed = 2;
+
+  function moveIceberg() {
+    icebergX -= icebergSpeed;
+    if (icebergX < -screenWidth) {
+      icebergX = screenWidth;
+    }
+    iceberg.style.left = `${icebergX}px`;
+    requestAnimationFrame(moveIceberg);
+  }
+
+  moveIceberg();
+});
 </script>
 
 
@@ -127,7 +151,11 @@ onMount(() => {
         <div class="achteck-rechteck"></div>
       </div>
     </div>
-    <div class="bahn2" style="top: 45px;"></div>
+    <div class="bahn2" style="top: 45px;">
+      <div class="iceberg">
+        <span></span>
+      </div>
+    </div>
     <div class="bahn3" style="top: -100px;">
       <div class="orca" style="position: absolute; left: 0px;">
       <div id="orca">     
