@@ -29,7 +29,6 @@
  penguinPosition += 50;
  }
  });
-
 });
 
 onMount(() => {
@@ -102,6 +101,36 @@ onMount(() => {
 
   moveIceberg();
 });
+
+let isTextfieldOpen = false;
+
+function openTextfield() {
+  isTextfieldOpen = true;
+}
+
+function closeTextfield() {
+  isTextfieldOpen = false;
+}
+
+let isOrcaTextfieldOpen = false;
+
+ function openOrcaTextfield() {
+ isOrcaTextfieldOpen = true;
+ }
+
+ function closeOrcaTextfield() {
+ isOrcaTextfieldOpen = false;
+ }
+
+ let isAchteckTextfieldOpen = false;
+
+ function openAchteckTextfield() {
+  isAchteckTextfieldOpen = true;
+ }
+
+ function closeAchteckTextfield() {
+  isAchteckTextfieldOpen = false;
+ }
 </script>
 
 
@@ -146,18 +175,30 @@ onMount(() => {
   
   <div class="track">
     <div class="bahn">
-      <div class="achteck">
+      <div class="achteck" on:click={openAchteckTextfield}>
         <div class="achteck-rechteck"></div>
         <div class="achteck-rechteck"></div>
       </div>
+      {#if isAchteckTextfieldOpen}
+      <div class="absolute top-10 left-10 bg-white p-4">
+      <p>Achteck-Textfeld ist offen!</p>
+      <button on:click={closeAchteckTextfield}>Schließen</button>
+      </div>
+      {/if}
     </div>
     <div class="bahn2" style="top: 45px;">
-      <div class="iceberg">
+      <div class="iceberg" on:click={openTextfield}>
         <span></span>
       </div>
+      {#if isTextfieldOpen}
+      <div class="textfield absolute top-10 left-10 bg-white p-4">
+        <p>Textfeld ist offen! - Funktioniert</p>
+        <button on:click={closeTextfield}>Schließen</button>
+      </div>
+      {/if}
     </div>
     <div class="bahn3" style="top: -100px;">
-      <div class="orca" style="position: absolute; left: 0px;">
+      <div class="orca" on:click={openOrcaTextfield} style="position: absolute; left: 0px;"> <!-- on:mouseover={openOrcaTextfield} ist auch interessant -->
       <div id="orca">     
         <div class="head"></div>
         <div class="spot"></div>
@@ -184,6 +225,12 @@ onMount(() => {
         </div>
       </div>
       </div>
+      {#if isOrcaTextfieldOpen}
+      <div class="absolute top-10 left-10 bg-white p-4">
+      <p>Orca-Textfeld ist offen!</p>
+      <button on:click={closeOrcaTextfield}>Schließen</button>
+      </div>
+      {/if}
     </div>
    </div>
 </div> 
@@ -191,5 +238,12 @@ onMount(() => {
 <style>
 .penguin-bottom .right-feet, .penguin-bottom .left-feet {
   animation: walk 2s infinite;
+}
+
+.orca:hover, .iceberg:hover, .achteck:hover {
+  /* Hier kannst du die Anzeigeform ändern */
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 </style>

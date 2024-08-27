@@ -1,169 +1,119 @@
+<script>
+ import Headline from '/src/components/headline.svelte';
+ import Logo from "$lib/Logo.png";
 
-	<div class="iceberg">
-		<span></span>
-	</div>
+ import { onMount } from 'svelte';
 
-<style>
+ let penguinPosition = 0;
 
-.iceberg {
-  position: relative;
-  z-index: 0;
-  width: 0;
-  height: 0;
-  border-left: 185px solid transparent;
-  border-right: 185px solid transparent;
-  border-bottom: 185px solid #004AAD;
-  animation: float 4s ease-in-out infinite;
+ onMount(() => {
+ // ...
+ document.addEventListener('keydown', (event) => {
+ if (event.key === ' ') {
+ penguinPosition -= 50;
+ } else if (event.key === 'ArrowUp') {
+ const penguin = document.querySelector('.penguin');
+ const bahn3 = document.querySelector('.bahn3');
+ const maxTop = parseInt(bahn3.style.top) + 50;
+ penguin.style.top = `${Math.max(parseInt(penguin.style.top) - 50, maxTop)}px`;
+ } else if (event.key === 'ArrowDown') {
+ const penguin = document.querySelector('.penguin');
+ const bahn2 = document.querySelector('.bahn2');
+ const minBottom = parseInt(bahn2.style.top) + 50 - 50; // Höhe von bahn2 minus Höhe des Pinguins
+ penguin.style.top = `${Math.min(parseInt(penguin.style.top) + 50, minBottom)}px`;
 }
-.iceberg::before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 185px;
-  left: -185px;
-  width: 0;
-  height: 0;
-  border-left: 95px solid transparent;
-  border-right: 95px solid transparent;
-  border-top: 95px solid lightblue;
-}
-.iceberg::after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 185px;
-  width: 0;
-  height: 0;
-  border-left: 95px solid transparent;
-  border-right: 95px solid transparent;
-  border-top: 95px solid lightblue;
-}
-.iceberg span {
-  position: absolute;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  margin-left: -100px;
-  display: block;
-  width: 0;
-  height: 0;
-  border-left: 185px solid transparent;
-  border-right: 185px solid transparent;
-  border-bottom: 185px solid darkblue;
-  animation: float2 4s ease-in-out infinite;
-}
-.iceberg span::before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 185px;
-  margin-left: -5px;
-  width: 0;
-  height: 0;
-  border-left: 95px solid transparent;
-  border-right: 95px solid transparent;
-  border-top: 95px solid #89cff3;
-  z-index: -1;
-}
-.iceberg span::after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 185px;
-  margin-left: -185px;
-  z-index: -1;
-  width: 0;
-  height: 0;
-  border-left: 95px solid transparent;
-  border-right: 95px solid transparent;
-  border-top: 95px solid #89cff3;
-}
-@-moz-keyframes float {
-  0% {
-    transform: translateY(15px);
-  }
-  50% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(15px);
-  }
-}
-@-webkit-keyframes float {
-  0% {
-    transform: translateY(15px);
-  }
-  50% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(15px);
-  }
-}
-@-o-keyframes float {
-  0% {
-    transform: translateY(15px);
-  }
-  50% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(15px);
-  }
-}
-@keyframes float {
-  0% {
-    transform: translateY(15px);
-  }
-  50% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(15px);
-  }
-}
-@-moz-keyframes float2 {
-  0% {
-    transform: translateY(5px);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-  100% {
-    transform: translateY(5px);
-  }
-}
-@-webkit-keyframes float2 {
-  0% {
-    transform: translateY(5px);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-  100% {
-    transform: translateY(5px);
-  }
-}
-@-o-keyframes float2 {
-  0% {
-    transform: translateY(5px);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-  100% {
-    transform: translateY(5px);
-  }
-}
-@keyframes float2 {
-  0% {
-    transform: translateY(5px);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-  100% {
-    transform: translateY(5px);
-  }
-}
-</style>
+});
+
+ document.addEventListener('keyup', (event) => {
+ if (event.key === ' ') {
+ penguinPosition += 50;
+ }
+ });
+
+ const orca = document.querySelector('.orca');
+ const achteck = document.querySelector('.achteck');
+ const iceberg = document.querySelector('.iceberg');
+
+ let orcaMoving = true;
+ let achteckMoving = true;
+ let icebergMoving = true;
+
+ document.addEventListener('keydown', (event) => {
+ if (event.key === 'Enter') {
+ orcaMoving = false;
+ achteckMoving = false;
+ icebergMoving = false;
+ }
+ });
+
+ document.addEventListener('keyup', (event) => {
+ if (event.key === 'Enter') {
+ orcaMoving = true;
+ achteckMoving = true;
+ icebergMoving = true;
+ }
+ });
+
+ function moveOrca() {
+ if (orcaMoving) {
+ const orca = document.querySelector('.orca');
+ const orcaX = parseInt(orca.style.left);
+ const screenWidth = window.innerWidth;
+ orca.style.left = `${orcaX - 4}px`;
+ if (orcaX < -screenWidth) {
+ orca.style.left = `${screenWidth}px`;
+ }
+ requestAnimationFrame(moveOrca);
+ }
+ }
+
+ function moveAchteck() {
+ if (achteckMoving) {
+ const achteck = document.querySelector('.achteck');
+ const achteckX = parseInt(achteck.style.left);
+ const screenWidth = window.innerWidth;
+ achteck.style.left = `${achteckX - 3}px`;
+ if (achteckX < -screenWidth) {
+ achteck.style.left = `${screenWidth}px`;
+ }
+ requestAnimationFrame(moveAchteck);
+ }
+ }
+
+ function moveIceberg() {
+ if (icebergMoving) {
+ const iceberg = document.querySelector('.iceberg');
+ const icebergX = parseInt(iceberg.style.left);
+ const screenWidth = window.innerWidth;
+ iceberg.style.left = `${icebergX - 2}px`;
+ if (icebergX < -screenWidth) {
+ iceberg.style.left = `${screenWidth}px`;
+ }
+ requestAnimationFrame(moveIceberg);
+ }
+ }
+
+ var orcaInterval = setInterval(moveOrca, 16);
+ var achteckInterval = setInterval(moveAchteck, 16);
+ var icebergInterval = setInterval(moveIceberg, 16);
+
+ document.addEventListener('keydown', (event) => {
+ if (event.key === 'Enter') {
+ clearInterval(orcaInterval);
+ clearInterval(achteckInterval);
+ clearInterval(icebergInterval);
+ }
+ });
+
+ document.addEventListener('keyup', (event) => {
+ if (event.key === 'Enter') {
+ orcaInterval = setInterval(moveOrca, 16);
+ achteckInterval = setInterval(moveAchteck, 16);
+ icebergInterval = setInterval(moveIceberg, 16);
+ }
+ });
+});
+
+</script>
+
+<!-- Funktioniert nicht wie gewollt, nur der Orca bewegt sich noch und reagiert auf Enter als Stop -->
