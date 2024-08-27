@@ -179,23 +179,11 @@ let isOrcaTextfieldOpen = false;
         <div class="achteck-rechteck"></div>
         <div class="achteck-rechteck"></div>
       </div>
-      {#if isAchteckTextfieldOpen}
-      <div class="absolute top-10 left-10 bg-white p-4">
-      <p>Achteck-Textfeld ist offen!</p>
-      <button on:click={closeAchteckTextfield}>Schließen</button>
-      </div>
-      {/if}
     </div>
     <div class="bahn2" style="top: 45px;">
       <div class="iceberg" on:click={openTextfield}>
         <span></span>
       </div>
-      {#if isTextfieldOpen}
-      <div class="textfield absolute top-10 left-10 bg-white p-4">
-        <p>Textfeld ist offen! - Funktioniert</p>
-        <button on:click={closeTextfield}>Schließen</button>
-      </div>
-      {/if}
     </div>
     <div class="bahn3" style="top: -100px;">
       <div class="orca" on:click={openOrcaTextfield} style="position: absolute; left: 0px;"> <!-- on:mouseover={openOrcaTextfield} ist auch interessant -->
@@ -225,14 +213,28 @@ let isOrcaTextfieldOpen = false;
         </div>
       </div>
       </div>
-      {#if isOrcaTextfieldOpen}
-      <div class="absolute top-10 left-10 bg-white p-4">
-      <p>Orca-Textfeld ist offen!</p>
-      <button on:click={closeOrcaTextfield}>Schließen</button>
-      </div>
-      {/if}
     </div>
    </div>
+   <div class="text-boxes">
+   {#if isTextfieldOpen}
+   <div class="text-box">
+     <p>Textfeld ist offen! - Funktioniert</p>
+     <button class="bg-sky-400 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded" on:click={closeTextfield}>Schließen</button>
+   </div>
+   {/if}
+   {#if isAchteckTextfieldOpen}
+   <div class="text-box">
+   <p>Achteck-Textfeld ist offen!</p>
+   <button class="bg-sky-400 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded" on:click={closeAchteckTextfield}>Schließen</button>
+   </div>
+   {/if}
+   {#if isOrcaTextfieldOpen}
+   <div class="text-box">
+   <p>Orca-Textfeld ist offen!</p>
+   <button class="bg-sky-400 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded" on:click={closeOrcaTextfield}>Schließen</button>
+   </div>
+   {/if}
+  </div>
 </div> 
 
 <style>
@@ -245,5 +247,27 @@ let isOrcaTextfieldOpen = false;
   cursor: pointer;
   transform: scale(1.1);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.text-boxes {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 410px;
+  left: 10px;
+  width: 99%;
+  padding: 4px;
+  z-index: 1;
+}
+
+.text-box {
+  max-width: 450px;
+}
+
+.text-boxes button {
+  margin: 5px;
 }
 </style>
