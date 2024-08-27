@@ -94,7 +94,6 @@
  border-bottom: 1px solid #000;
 }
 
-
 .bahn2 {
  position: relative;
  left: 0;
@@ -113,6 +112,22 @@
  background-color: #fff;
  border-top: 1px solid #000;
  border-bottom: 1px solid #000;
+}
+
+.penguin-bottom3 .right-feet3, .penguin-bottom3 .left-feet3 {
+  animation: walk 2s infinite;
+}
+
+@keyframes walk {
+  450% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5);
+  }
+  55% {
+    transform: translateX(0);
+  }
 }
 
 </style>
