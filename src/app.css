@@ -1339,9 +1339,9 @@ Anfang Eisberg */
   z-index: 0;
   width: 0;
   height: 0;
-  border-left: 30px solid transparent;
-  border-right: 30px solid transparent;
-  border-bottom: 30px solid #004AAD;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 40px solid #004AAD;
   animation: float 4s ease-in-out infinite;
   }
   
@@ -1349,24 +1349,24 @@ Anfang Eisberg */
   content: '';
   display: block;
   position: absolute;
-  top: 30px;
+  top: 40px;
   width: 0;
   height: 0;
-  border-left: 17px solid transparent;
-  border-right: 17px solid transparent;
-  border-top: 17px solid lightblue;
+  border-left: 23px solid transparent;
+  border-right: 23px solid transparent;
+  border-top: 23px solid lightblue;
   }
   
   .iceberg::after {
   content: '';
   display: block;
   position: absolute;
-  top: 30px;
+  top: 40px;
   width: 0;
   height: 0;
-  border-left: 17px solid transparent;
-  border-right: 17px solid transparent;
-  border-top: 17px solid lightblue;
+  border-left: 23px solid transparent;
+  border-right: 23px solid transparent;
+  border-top: 23px solid lightblue;
   }
   
   .iceberg span {
@@ -1378,9 +1378,9 @@ Anfang Eisberg */
   display: block;
   width: 0;
   height: 0;
-  border-left: 30px solid transparent;
-  border-right: 30px solid transparent;
-  border-bottom: 30px solid darkblue;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 40px solid darkblue;
   animation: float2 4s ease-in-out infinite;
   }
   
@@ -1388,13 +1388,13 @@ Anfang Eisberg */
   content: '';
   display: block;
   position: absolute;
-  top: 30px;
+  top: 40px;
   margin-left: -5px;
   width: 0;
   height: 0;
-  border-left: 17px solid transparent;
-  border-right: 17px solid transparent;
-  border-top: 17px solid #89cff3;
+  border-left: 23px solid transparent;
+  border-right: 23px solid transparent;
+  border-top: 23px solid #89cff3;
   z-index: -1;
   }
   
@@ -1402,14 +1402,14 @@ Anfang Eisberg */
   content: '';
   display: block;
   position: absolute;
-  top: 30px;
-  margin-left: -30px;
+  top: 40px;
+  margin-left: -40px;
   z-index: -1;
   width: 0;
   height: 0;
-  border-left: 17px solid transparent;
-  border-right: 17px solid transparent;
-  border-top: 17px solid #89cff3;
+  border-left: 23px solid transparent;
+  border-right: 23px solid transparent;
+  border-top: 23px solid #89cff3;
   }
   
   @-moz-keyframes float {
