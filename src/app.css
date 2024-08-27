@@ -1024,3 +1024,51 @@ Pinguin 3 */
   -moz-box-shadow: 0px 0px 20px 5px #00f1ee;    
   -webkit-box-shadow: 0px 0px 20px 5px #00f1ee;  
 } 
+
+/* Bahn + Pinguin Fußanimation */
+.track {
+  position: relative;
+  left: 0;
+  top: -70px;
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+ }
+ 
+ .bahn2 {
+  position: relative;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  border-bottom: 1px solid #000;
+  border-top: 1px solid #000;
+ 
+ }
+ .bahn3 {
+  position: relative;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+ }
+ 
+ .penguin-bottom3 .right-feet3, .penguin-bottom3 .left-feet3 {
+   animation: walk 2s infinite;
+ }
+ 
+ @keyframes walk {
+   450% {
+     transform: translateX(0);
+   }
+   50% {
+     transform: translateX(5);
+   }
+   55% {
+     transform: translateX(0);
+   }
+ }
