@@ -7,18 +7,23 @@
   let penguinPosition = 0;
 
   onMount(() => {
-  document.addEventListener('keydown', (event) => {
-  if (event.key === ' ') {
-  penguinPosition -= 30;
-  }
-  });
+ // ...
+ document.addEventListener('keydown', (event) => {
+ if (event.key === ' ') {
+ penguinPosition -= 50;
+ }
+ });
 
-  document.addEventListener('keyup', (event) => {
-  if (event.key === ' ') {
-  penguinPosition += 30;
-  }
-  });
-  });
+ document.addEventListener('keyup', (event) => {
+ if (event.key === ' ') {
+ penguinPosition += 50;
+ }
+ });
+
+ // Anpassen Sie die Position der Bahn, wenn der Pinguin sich bewegt
+ const track = document.querySelector('.track');
+ track.style.left = `${penguinPosition}px`; // 50px ist die halbe Breite des Pinguins
+});
 </script>
 
 
@@ -61,3 +66,18 @@
     <div class="beak-bottom3"></div>
   </div>
 </div>
+
+<div class="track">
+  <div class="bahn"></div>
+ </div>
+
+<style>
+  .track {
+ position: relative;  
+ left: 0;
+ width: 100%;
+ height: 20px; /* Breite der Bahn */
+ background-color: #fff; /* schwarze Farbe */
+ border: 1px solid #000; /* schwarze Linie */
+}
+</style>
