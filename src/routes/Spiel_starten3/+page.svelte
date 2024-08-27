@@ -69,6 +69,8 @@
 
 <div class="track">
   <div class="bahn"></div>
+  <div class="bahn2" style="top: 50px;"></div>
+  <div class="bahn3" style="top: -100px;"></div>
  </div>
 
 <style>
@@ -79,6 +81,24 @@
  width: 100%;
  height: 50px; /* Breite der Bahn */
  background-color: #fff; /* schwarze Farbe */
- border: 1px solid #000; /* schwarze Linie */
+ border-top: 1px solid #000; /* schwarze Linie */
+ border-bottom: 1px solid #000; /* schwarze Linie */
+}
+
+.bahn2 {
+ position: relative;
+ left: 0;
+ width: 100%;
+ height: 50px;
+ background-color: #fff;
+ border-bottom: 1px solid #000;
+}
+.bahn3 {
+ position: relative;
+ left: 0;
+ width: 100%;
+ height: 40px;
+ background-color: #fff;
+ border-top: 1px solid #000;
 }
 </style>
