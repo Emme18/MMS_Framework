@@ -43,7 +43,7 @@
   <div class="cloud6"></div> 
 </div> 
 
-<div class="penguin3" style="position: relative; top: {penguinPosition}px;">
+<div class="penguin3" style="position: relative; top: {penguinPosition}px; z-index: 1;">
   <div class="penguin-bottom3">
     <div class="right-hand3"></div>
     <div class="left-hand3"></div>
@@ -75,8 +75,9 @@
   .track {
  position: relative;  
  left: 0;
+ top: -70px;
  width: 100%;
- height: 20px; /* Breite der Bahn */
+ height: 50px; /* Breite der Bahn */
  background-color: #fff; /* schwarze Farbe */
  border: 1px solid #000; /* schwarze Linie */
 }
