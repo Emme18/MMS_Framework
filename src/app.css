@@ -1046,7 +1046,6 @@ Pinguin 3 */
   background-color: #fff;
   border-bottom: 1px solid #000;
   border-top: 1px solid #000;
- 
  }
  .bahn3 {
   position: relative;
@@ -1311,4 +1310,24 @@ Pinguin 3 */
   top: -70px;  
   left: 60px;
 }
-/* Orca Ende */
+/* Orca Ende 
+Anfang Rutschiges Eis*/
+
+.achteck {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.achteck-rechteck {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  clip-path: polygon(25%, 60%, 95%, 80%);
+  background-color: #004AAD;
+}
+
+.achteck-rechteck:nth-child(1) {
+  top: 0;
+  transform: rotate(45deg);
+}

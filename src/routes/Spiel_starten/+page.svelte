@@ -34,7 +34,7 @@
 
 onMount(() => {
  const orca = document.querySelector('.orca');
- orca.style.zIndex = 10;
+ orca.style.zIndex = 11;
  const bahn3 = document.querySelector('.bahn3');
  const screenWidth = window.innerWidth;
  const screenHeight = window.innerHeight;
@@ -53,6 +53,31 @@ onMount(() => {
 
  moveOrca();
 });
+
+onMount(() => {
+  const achteck = document.querySelector('.achteck');
+  achteck.style.position = 'absolute';
+  achteck.style.left = '0px';
+  achteck.style.top = '10px';
+  achteck.style.zIndex = '9';
+  const bahn = document.querySelector('.bahn');
+  const screenWidth = window.innerWidth;
+  const screenHeight = window.innerHeight;
+
+  let achteckX = screenWidth;
+  let achteckSpeed = 3;
+
+  function moveAchteck() {
+   achteckX -= achteckSpeed;
+   if (achteckX < -screenWidth) {
+    achteckX = screenWidth;
+   }
+   achteck.style.left = `${achteckX}px`;
+   requestAnimationFrame(moveAchteck);
+  }
+
+  moveAchteck();
+ });
 </script>
 
 
@@ -71,7 +96,7 @@ onMount(() => {
   <div class="cloud5"></div> 
   <div class="cloud6"></div> 
 
-  <div class="penguin" style="position: relative; top: {penguinPosition}px; z-index: 1;">
+  <div class="penguin" style="position: relative; top: {penguinPosition}px; z-index: 10;">
     <div class="penguin-bottom">
       <div class="right-hand"></div>
       <div class="left-hand"></div>
@@ -96,7 +121,12 @@ onMount(() => {
   </div>
   
   <div class="track">
-    <div class="bahn"></div>
+    <div class="bahn">
+      <div class="achteck">
+        <div class="achteck-rechteck"></div>
+        <div class="achteck-rechteck"></div>
+      </div>
+    </div>
     <div class="bahn2" style="top: 45px;"></div>
     <div class="bahn3" style="top: -100px;">
       <div class="orca" style="position: absolute; left: 0px;">
