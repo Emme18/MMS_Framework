@@ -9,13 +9,13 @@
   onMount(() => {
   document.addEventListener('keydown', (event) => {
   if (event.key === ' ') {
-  penguinPosition -= 10;
+  penguinPosition -= 30;
   }
   });
 
   document.addEventListener('keyup', (event) => {
   if (event.key === ' ') {
-  penguinPosition += 10;
+  penguinPosition += 30;
   }
   });
   });
