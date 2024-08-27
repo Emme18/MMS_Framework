@@ -11,8 +11,18 @@
  document.addEventListener('keydown', (event) => {
  if (event.key === ' ') {
  penguinPosition -= 50;
- }
- });
+ } else if (event.key === 'ArrowUp') {
+ const penguin = document.querySelector('.penguin3');
+ const bahn3 = document.querySelector('.bahn3');
+ const maxTop = parseInt(bahn3.style.top) + 50;
+ penguin.style.top = `${Math.max(parseInt(penguin.style.top) - 50, maxTop)}px`;
+ } else if (event.key === 'ArrowDown') {
+ const penguin = document.querySelector('.penguin3');
+ const bahn2 = document.querySelector('.bahn2');
+ const minBottom = parseInt(bahn2.style.top) + 50 - 50; // Höhe von bahn2 minus Höhe des Pinguins
+ penguin.style.top = `${Math.min(parseInt(penguin.style.top) + 50, minBottom)}px`;
+}
+});
 
  document.addEventListener('keyup', (event) => {
  if (event.key === ' ') {
@@ -20,9 +30,6 @@
  }
  });
 
- // Anpassen Sie die Position der Bahn, wenn der Pinguin sich bewegt
- const track = document.querySelector('.track');
- track.style.left = `${penguinPosition}px`; // 50px ist die halbe Breite des Pinguins
 });
 </script>
 
@@ -41,49 +48,52 @@
   <div class="cloud4"></div> 
   <div class="cloud5"></div> 
   <div class="cloud6"></div> 
+
+  <div class="penguin3" style="position: relative; top: {penguinPosition}px; z-index: 1;">
+    <div class="penguin-bottom3">
+      <div class="right-hand3"></div>
+      <div class="left-hand3"></div>
+      <div class="right-feet3"></div>
+      <div class="left-feet3"></div>
+    </div>
+    <div class="penguin-top3">
+      <div class="right-cheek3"></div>
+      <div class="left-cheek3"></div>
+      <div class="belly3"></div>
+      <div class="right-eye3">
+        <div class="sparkle3"></div>
+      </div>
+      <div class="left-eye3">
+        <div class="sparkle3"></div>
+      </div>
+      <div class="blush-right3"></div>
+      <div class="blush-left3"></div>
+      <div class="beak-top3"></div>
+      <div class="beak-bottom3"></div>
+    </div>
+  </div>
+  
+  <div class="track">
+    <div class="bahn"></div>
+    <div class="bahn2" style="top: 45px;"></div>
+    <div class="bahn3" style="top: -100px;"></div>
+   </div>
 </div> 
 
-<div class="penguin3" style="position: relative; top: {penguinPosition}px; z-index: 1;">
-  <div class="penguin-bottom3">
-    <div class="right-hand3"></div>
-    <div class="left-hand3"></div>
-    <div class="right-feet3"></div>
-    <div class="left-feet3"></div>
-  </div>
-  <div class="penguin-top3">
-    <div class="right-cheek3"></div>
-    <div class="left-cheek3"></div>
-    <div class="belly3"></div>
-    <div class="right-eye3">
-      <div class="sparkle3"></div>
-    </div>
-    <div class="left-eye3">
-      <div class="sparkle3"></div>
-    </div>
-    <div class="blush-right3"></div>
-    <div class="blush-left3"></div>
-    <div class="beak-top3"></div>
-    <div class="beak-bottom3"></div>
-  </div>
-</div>
 
-<div class="track">
-  <div class="bahn"></div>
-  <div class="bahn2" style="top: 50px;"></div>
-  <div class="bahn3" style="top: -100px;"></div>
- </div>
 
 <style>
-  .track {
- position: relative;  
+.track {
+ position: relative;
  left: 0;
  top: -70px;
  width: 100%;
- height: 50px; /* Breite der Bahn */
- background-color: #fff; /* schwarze Farbe */
- border-top: 1px solid #000; /* schwarze Linie */
- border-bottom: 1px solid #000; /* schwarze Linie */
+ height: 50px;
+ background-color: #fff;
+ border-top: 1px solid #000;
+ border-bottom: 1px solid #000;
 }
+
 
 .bahn2 {
  position: relative;
@@ -92,13 +102,17 @@
  height: 50px;
  background-color: #fff;
  border-bottom: 1px solid #000;
+ border-top: 1px solid #000;
+
 }
 .bahn3 {
  position: relative;
  left: 0;
  width: 100%;
- height: 40px;
+ height: 50px;
  background-color: #fff;
  border-top: 1px solid #000;
+ border-bottom: 1px solid #000;
 }
+
 </style>
