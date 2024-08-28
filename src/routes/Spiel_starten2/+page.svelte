@@ -40,7 +40,7 @@
    const screenHeight = window.innerHeight;
   
    let orcaX = screenWidth;
-   let orcaSpeed = 4;
+   let orcaSpeed = 9;
   
    function moveOrca() {
    orcaX -= orcaSpeed;
@@ -65,7 +65,7 @@
   const screenHeight = window.innerHeight;
 
   let achteckX = screenWidth;
-  let achteckSpeed = 3;
+  let achteckSpeed = 4;
 
   function moveAchteck() {
    achteckX -= achteckSpeed;
@@ -89,7 +89,7 @@
   const screenHeight = window.innerHeight;
 
   let icebergX = screenWidth;
-  let icebergSpeed = 2;
+  let icebergSpeed = 6;
 
   function moveIceberg() {
     icebergX -= icebergSpeed;
