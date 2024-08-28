@@ -215,27 +215,34 @@ let isOrcaTextfieldOpen = false;
       </div>
     </div>
    </div>
-   <div class="text-boxes">
-   {#if isTextfieldOpen}
-   <div class="text-box">
-     <p>Textfeld ist offen! - Funktioniert</p>
-     <button class="bg-sky-400 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded" on:click={closeTextfield}>Schließen</button>
-   </div>
-   {/if}
-   {#if isAchteckTextfieldOpen}
-   <div class="text-box">
-   <p>Achteck-Textfeld ist offen!</p>
-   <button class="bg-sky-400 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded" on:click={closeAchteckTextfield}>Schließen</button>
-   </div>
-   {/if}
-   {#if isOrcaTextfieldOpen}
-   <div class="text-box">
-   <p>Orca-Textfeld ist offen!</p>
-   <button class="bg-sky-400 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded" on:click={closeOrcaTextfield}>Schließen</button>
-   </div>
-   {/if}
-  </div>
+
 </div> 
+<div class="text-boxes">
+  {#if isTextfieldOpen}
+  <div class="text-box">
+    <p><u>Springen zur Erholung</u><br>
+    Der Pinguin ist trotz seiner kurzen Beine ein talentierter Springer. Bis zu 1,80 Meter hoch kann er aus dem Wasser springen. Diese Begabung verwendet der Pinguin unter anderem, um während seiner Tauchgänge Entspannungspausen einzulegen. Dazu springt er auf Eisschollen und andere Eisflächen und verweilt dort, bis die Jagd weitergeht.
+    </p>
+    <button class="bg-sky-400 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded" on:click={closeTextfield}>Schließen</button>
+  </div>
+  {/if}
+  {#if isAchteckTextfieldOpen}
+  <div class="text-box">
+  <p><u>Fortbewegung</u><br>
+  Der Pinguin ist ein begnadeter Schwimmer. Unter Wasser erreichen einige Arten Geschwindigkeiten von bis zu 30 km/h. Beim Schwimmen dienen die Flügel als Flossen und der Schwanz als Ruder. An Land bewegt sich der Pinguin bekanntermaßen langsam watschelnd voran. Scharfe Krallen sorgen für Haftung am Boden, sodass der Pinguin auf dem Eis nicht ausrutscht. Der Pinguin rutscht auch auf seinem Bauch über das Eis, dann ist er auch an Land schneller unterwegs. 
+  </p>
+  <button class="bg-sky-400 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded" on:click={closeAchteckTextfield}>Schließen</button>
+  </div>
+  {/if}
+  {#if isOrcaTextfieldOpen}
+  <div class="text-box">
+  <p><u>Jäger und Gejagter</u><br>
+  Der Pinguin ist ein begabter Fischjäger. Zu seiner Beute zählen Fische, Tintenfische und verschiedenste Krebstiere. Wie jedes Lebewesen hat jedoch auch der Pinguin Feinde. Zu diesen zählen vor allem die Seeleoparden, die in Küstennähe jagen. Aber auch Orcas (Schwertwale), Seebären, Seelöwen und Mähnenrobben zählen zu den natürlichen Feinden des Pinguins.
+  </p>
+  <button class="bg-sky-400 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded" on:click={closeOrcaTextfield}>Schließen</button>
+  </div>
+  {/if}
+</div>
 
 <style>
 .penguin-bottom .right-feet, .penguin-bottom .left-feet {
@@ -252,19 +259,23 @@ let isOrcaTextfieldOpen = false;
 .text-boxes {
   display: flex;
   flex-direction: row;
-  text-align: center;
+  text-align: left;
   align-items: center;
   justify-content: space-between;
   position: absolute;
-  top: 410px;
+  top: 500px;
   left: 10px;
   width: 99%;
   padding: 4px;
-  z-index: 1;
+  z-index: 100;
 }
 
 .text-box {
   max-width: 450px;
+  height: auto;
+  background-color: white;
+  padding: 5px;
+  border: solid #004AAD;
 }
 
 .text-boxes button {
