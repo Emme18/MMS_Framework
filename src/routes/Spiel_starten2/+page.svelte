@@ -233,7 +233,7 @@ isInfoTextfieldOpen = false;
       <p><u>Springen zur Erholung</u><br>
       Der Pinguin ist trotz seiner kurzen Beine ein talentierter Springer. Bis zu 1,80 Meter hoch kann er aus dem Wasser springen. Diese Begabung verwendet der Pinguin unter anderem, um während seiner Tauchgänge Entspannungspausen einzulegen. Dazu springt er auf Eisschollen und andere Eisflächen und verweilt dort, bis die Jagd weitergeht.
       </p>
-      <button class="bg-sky-400 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded" on:click={closeTextfield}>Schließen</button>
+      <button class="bg-sky-400 hover:bg-sky-600 text-white py-2 px-4 rounded" on:click={closeTextfield}>Schließen</button>
     </div>
     {/if}
     {#if isAchteckTextfieldOpen}
@@ -241,7 +241,7 @@ isInfoTextfieldOpen = false;
     <p><u>Fortbewegung</u><br>
     Der Pinguin ist ein begnadeter Schwimmer. Unter Wasser erreichen einige Arten Geschwindigkeiten von bis zu 30 km/h. Beim Schwimmen dienen die Flügel als Flossen und der Schwanz als Ruder. An Land bewegt sich der Pinguin bekanntermaßen langsam watschelnd voran. Scharfe Krallen sorgen für Haftung am Boden, sodass der Pinguin auf dem Eis nicht ausrutscht. Der Pinguin rutscht auch auf seinem Bauch über das Eis, dann ist er auch an Land schneller unterwegs. 
     </p>
-    <button class="bg-sky-400 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded" on:click={closeAchteckTextfield}>Schließen</button>
+    <button class="bg-sky-400 hover:bg-sky-600 text-white py-2 px-4 rounded" on:click={closeAchteckTextfield}>Schließen</button>
     </div>
     {/if}
     {#if isOrcaTextfieldOpen}
@@ -249,7 +249,7 @@ isInfoTextfieldOpen = false;
     <p><u>Jäger und Gejagter</u><br>
     Der Pinguin ist ein begabter Fischjäger. Zu seiner Beute zählen Fische, Tintenfische und verschiedenste Krebstiere. Wie jedes Lebewesen hat jedoch auch der Pinguin Feinde. Zu diesen zählen vor allem die Seeleoparden, die in Küstennähe jagen. Aber auch Orcas (Schwertwale), Seebären, Seelöwen und Mähnenrobben zählen zu den natürlichen Feinden des Pinguins.
     </p>
-    <button class="bg-sky-400 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded" on:click={closeOrcaTextfield}>Schließen</button>
+    <button class="bg-sky-400 hover:bg-sky-600 text-white py-2 px-4 rounded" on:click={closeOrcaTextfield}>Schließen</button>
     </div>
     {/if}
   </div>
@@ -261,11 +261,11 @@ isInfoTextfieldOpen = false;
       Wie sicherlich bereits bemerkt kann der Pinguin nicht verlieren. 😉 <br>
       Dies ist eine animierte Infoseite mit Informationen zum Pinguin. Beim Klick auf die Animationen öffnen sich Kurztexte, deren Quellen sich im Impressum befinden. 
         </p>
-    <button class="bg-sky-400 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded text-2xl" on:click={closeInfoTextfield}>Schließen</button>
+    <button class="bg-sky-400 hover:bg-sky-600 text-white py-2 px-4 rounded text-2xl" on:click={closeInfoTextfield}>Schließen</button>
     </div>
     {/if}
   </div>
-  <button class="bg-sky-400 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded text-2xl" style="position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%);" on:click={openInfoTextfield}>
+  <button class="bg-sky-400 hover:bg-sky-600 text-white py-2 px-4 rounded text-2xl" style="position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%);" on:click={openInfoTextfield}>
     Info
   </button>
 

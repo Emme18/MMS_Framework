@@ -9,6 +9,9 @@
     src: url('/fonts/Carter_One/CarterOne-Regular.ttf');
 }
 
+* {
+  font-family: Carter One, sans-serif;
+}
 /* Anfangsseite */
 
 .Anfang {
