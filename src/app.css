@@ -1543,4 +1543,20 @@ Anfang Textboxen*/
   margin: 5px;
 }
 
+.AllInfo {
+  text-align: left;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  transform: translateX(-50%);
+  height: auto;
+  background-color: #004AAD;
+  color: white;
+  z-index: 200;
+}
+
+.Info {
+  padding: 10px;
+}
 /* Ende Textboxen */

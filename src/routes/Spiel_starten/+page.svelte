@@ -131,6 +131,16 @@ let isOrcaTextfieldOpen = false;
  function closeAchteckTextfield() {
   isAchteckTextfieldOpen = false;
  }
+
+  let isInfoTextfieldOpen = false;
+
+ function openInfoTextfield() {
+ isInfoTextfieldOpen = true;
+ }
+
+ function closeInfoTextfield() {
+ isInfoTextfieldOpen = false;
+ }
 </script>
 
 
@@ -243,6 +253,22 @@ let isOrcaTextfieldOpen = false;
   </div>
   {/if}
 </div>
+
+<div class="AllInfo">
+  {#if isInfoTextfieldOpen}
+  <div class="Info">
+  <p class="text-2xl mb-10"><u>Info</u><br>
+    Wie sicherlich bereits bemerkt kann der Pinguin nicht verlieren. 😉 <br>
+    Dies ist eine animierte Infoseite mit Informationen zum Pinguin. Beim Klick auf die Animationen öffnen sich Kurztexte, deren Quellen sich im Impressum befinden. 
+      </p>
+  <button class="bg-sky-400 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded text-2xl" on:click={closeInfoTextfield}>Schließen</button>
+  </div>
+  {/if}
+</div>
+<button class="bg-sky-400 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded text-2xl" style="position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%);" on:click={openInfoTextfield}>
+  Info
+</button>
+ 
 
 <style>
 .penguin-bottom .right-feet, .penguin-bottom .left-feet {
