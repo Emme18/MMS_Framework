@@ -1507,4 +1507,40 @@ Anfang Eisberg */
     transform: translateY(5px);
   }
   }
-/* Ende Eisberg */
+/* Ende Eisberg 
+Anfang Textboxen*/
+
+.orca:hover, .iceberg:hover, .achteck:hover {
+  /* Hier kannst du die Anzeigeform ändern */
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.text-boxes {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 500px;
+  left: 10px;
+  width: 99%;
+  padding: 4px;
+  z-index: 100;
+}
+
+.text-box {
+  max-width: 450px;
+  height: auto;
+  background-color: white;
+  padding: 5px;
+  border: solid #004AAD;
+}
+
+.text-boxes button {
+  margin: 5px;
+}
+
+/* Ende Textboxen */

@@ -34,7 +34,7 @@
 
 onMount(() => {
  const orca = document.querySelector('.orca');
- orca.style.zIndex = 10;
+ orca.style.zIndex = 11;
  const bahn3 = document.querySelector('.bahn3');
  const screenWidth = window.innerWidth;
  const screenHeight = window.innerHeight;
@@ -102,6 +102,36 @@ onMount(() => {
 
   moveIceberg();
 });
+
+let isTextfieldOpen = false;
+
+function openTextfield() {
+  isTextfieldOpen = true;
+}
+
+function closeTextfield() {
+  isTextfieldOpen = false;
+}
+
+let isOrcaTextfieldOpen = false;
+
+ function openOrcaTextfield() {
+ isOrcaTextfieldOpen = true;
+ }
+
+ function closeOrcaTextfield() {
+ isOrcaTextfieldOpen = false;
+ }
+
+ let isAchteckTextfieldOpen = false;
+
+ function openAchteckTextfield() {
+  isAchteckTextfieldOpen = true;
+ }
+
+ function closeAchteckTextfield() {
+  isAchteckTextfieldOpen = false;
+ }
 </script>
 
 
@@ -120,7 +150,7 @@ onMount(() => {
   <div class="cloud5"></div> 
   <div class="cloud6"></div> 
 
-  <div class="penguin3" style="position: relative; top: {penguinPosition}px; z-index: 1;">
+  <div class="penguin3" style="position: relative; top: {penguinPosition}px; z-index: 10;">
     <div class="penguin-bottom3">
       <div class="right-hand3"></div>
       <div class="left-hand3"></div>
@@ -146,19 +176,19 @@ onMount(() => {
   
   <div class="track">
     <div class="bahn">
-      <div class="achteck">
+      <div class="achteck" on:click={openAchteckTextfield}>
         <div class="achteck-rechteck"></div>
         <div class="achteck-rechteck"></div>
       </div>
     </div>
     <div class="bahn2" style="top: 45px;">
-      <div class="iceberg">
+      <div class="iceberg" on:click={openTextfield}>
         <span></span>
       </div>
     </div>
     <div class="bahn3" style="top: -100px;">
-      <div class="orca" style="position: absolute; left: 0px;">
-      <div id="orca">     
+      <div class="orca" on:click={openOrcaTextfield} style="position: absolute; left: 0px;"> <!-- on:mouseover={openOrcaTextfield} ist auch interessant -->
+        <div id="orca">     
         <div class="head"></div>
         <div class="spot"></div>
         <div class="front-flipper-perspective">
@@ -187,6 +217,32 @@ onMount(() => {
     </div>
    </div>
 </div> 
+<div class="text-boxes">
+  {#if isTextfieldOpen}
+  <div class="text-box">
+    <p><u>Springen zur Erholung</u><br>
+    Der Pinguin ist trotz seiner kurzen Beine ein talentierter Springer. Bis zu 1,80 Meter hoch kann er aus dem Wasser springen. Diese Begabung verwendet der Pinguin unter anderem, um während seiner Tauchgänge Entspannungspausen einzulegen. Dazu springt er auf Eisschollen und andere Eisflächen und verweilt dort, bis die Jagd weitergeht.
+    </p>
+    <button class="bg-sky-400 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded" on:click={closeTextfield}>Schließen</button>
+  </div>
+  {/if}
+  {#if isAchteckTextfieldOpen}
+  <div class="text-box">
+  <p><u>Fortbewegung</u><br>
+  Der Pinguin ist ein begnadeter Schwimmer. Unter Wasser erreichen einige Arten Geschwindigkeiten von bis zu 30 km/h. Beim Schwimmen dienen die Flügel als Flossen und der Schwanz als Ruder. An Land bewegt sich der Pinguin bekanntermaßen langsam watschelnd voran. Scharfe Krallen sorgen für Haftung am Boden, sodass der Pinguin auf dem Eis nicht ausrutscht. Der Pinguin rutscht auch auf seinem Bauch über das Eis, dann ist er auch an Land schneller unterwegs. 
+  </p>
+  <button class="bg-sky-400 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded" on:click={closeAchteckTextfield}>Schließen</button>
+  </div>
+  {/if}
+  {#if isOrcaTextfieldOpen}
+  <div class="text-box">
+  <p><u>Jäger und Gejagter</u><br>
+  Der Pinguin ist ein begabter Fischjäger. Zu seiner Beute zählen Fische, Tintenfische und verschiedenste Krebstiere. Wie jedes Lebewesen hat jedoch auch der Pinguin Feinde. Zu diesen zählen vor allem die Seeleoparden, die in Küstennähe jagen. Aber auch Orcas (Schwertwale), Seebären, Seelöwen und Mähnenrobben zählen zu den natürlichen Feinden des Pinguins.
+  </p>
+  <button class="bg-sky-400 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded" on:click={closeOrcaTextfield}>Schließen</button>
+  </div>
+  {/if}
+</div>
 
 <style>
 .penguin-bottom3 .right-feet3, .penguin-bottom3 .left-feet3 {
