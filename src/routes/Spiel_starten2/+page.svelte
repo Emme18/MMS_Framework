@@ -29,78 +29,101 @@
    penguinPosition += 50;
    }
    });
-  
   });
   
-  onMount(() => {
-   const orca = document.querySelector('.orca');
-   orca.style.zIndex = 11;
-   const bahn3 = document.querySelector('.bahn3');
-   const screenWidth = window.innerWidth;
-   const screenHeight = window.innerHeight;
-  
-   let orcaX = screenWidth;
-   let orcaSpeed = 9;
-  
-   function moveOrca() {
-   orcaX -= orcaSpeed;
-   if (orcaX < -screenWidth) {
-   orcaX = screenWidth;
-   }
-   orca.style.left = `${orcaX}px`;
-   requestAnimationFrame(moveOrca);
-   }
-  
-   moveOrca();
-  });
+let moveOrcaRunning = true;
+let moveAchteckRunning = true;
+let moveIcebergRunning = true;
 
-  onMount(() => {
-  const achteck = document.querySelector('.achteck');
-  achteck.style.position = 'absolute';
-  achteck.style.left = '0px';
-  achteck.style.top = '10px';
-  achteck.style.zIndex = '9';
-  const bahn = document.querySelector('.bahn');
-  const screenWidth = window.innerWidth;
-  const screenHeight = window.innerHeight;
+onMount(() => {
+ const orca = document.querySelector('.orca');
+ orca.style.zIndex = 11;
+ const bahn3 = document.querySelector('.bahn3');
+ const screenWidth = window.innerWidth;
+ const screenHeight = window.innerHeight;
 
-  let achteckX = screenWidth;
-  let achteckSpeed = 4;
+ let orcaX = screenWidth;
+ let orcaSpeed = 9;
 
-  function moveAchteck() {
-   achteckX -= achteckSpeed;
-   if (achteckX < -screenWidth) {
-    achteckX = screenWidth;
-   }
-   achteck.style.left = `${achteckX}px`;
-   requestAnimationFrame(moveAchteck);
-  }
+ function moveOrca() {
+ if (moveOrcaRunning) {
+ orcaX -= orcaSpeed;
+ if (orcaX < -screenWidth) {
+ orcaX = screenWidth;
+ }
+ orca.style.left = `${orcaX}px`;
+ requestAnimationFrame(moveOrca);
+ }
+ }
 
-  moveAchteck();
- });
+ moveOrca();
+});
 
- onMount(() => {
-  const iceberg = document.querySelector('.iceberg');
-  iceberg.style.position = 'absolute';
-  iceberg.style.top = '-110px'; // Höhe anpassen
-  iceberg.style.zIndex = '8';
-  const bahn2 = document.querySelector('.bahn2');
-  const screenWidth = window.innerWidth;
-  const screenHeight = window.innerHeight;
+onMount(() => {
+ const achteck = document.querySelector('.achteck');
+ achteck.style.position = 'absolute';
+ achteck.style.left = '0px';
+ achteck.style.top = '10px';
+ achteck.style.zIndex = '9';
+ const bahn = document.querySelector('.bahn');
+ const screenWidth = window.innerWidth;
+ const screenHeight = window.innerHeight;
 
-  let icebergX = screenWidth;
-  let icebergSpeed = 6;
+ let achteckX = screenWidth;
+ let achteckSpeed = 4;
 
-  function moveIceberg() {
-    icebergX -= icebergSpeed;
-    if (icebergX < -screenWidth) {
-      icebergX = screenWidth;
-    }
-    iceberg.style.left = `${icebergX}px`;
-    requestAnimationFrame(moveIceberg);
-  }
+ function moveAchteck() {
+ if (moveAchteckRunning) {
+ achteckX -= achteckSpeed;
+ if (achteckX < -screenWidth) {
+ achteckX = screenWidth;
+ }
+ achteck.style.left = `${achteckX}px`;
+ requestAnimationFrame(moveAchteck);
+ }
+ }
 
-  moveIceberg();
+ moveAchteck();
+});
+
+onMount(() => {
+ const iceberg = document.querySelector('.iceberg');
+ iceberg.style.position = 'absolute';
+ iceberg.style.top = '-110px'; // Höhe anpassen
+ iceberg.style.zIndex = '8';
+ const bahn2 = document.querySelector('.bahn2');
+ const screenWidth = window.innerWidth;
+ const screenHeight = window.innerHeight;
+
+ let icebergX = screenWidth;
+ let icebergSpeed = 8;
+
+ function moveIceberg() {
+ if (moveIcebergRunning) {
+ icebergX -= icebergSpeed;
+ if (icebergX < -screenWidth) {
+ icebergX = screenWidth;
+ }
+ iceberg.style.left = `${icebergX}px`;
+ requestAnimationFrame(moveIceberg);
+ }
+ }
+
+ moveIceberg();
+});
+
+onMount(() => {
+document.addEventListener('keydown', (event) => {
+ if (event.key === 'Enter') {
+ stopAnimations();
+ }
+});
+
+function stopAnimations() {
+ moveOrcaRunning = false;
+ moveAchteckRunning = false;
+ moveIcebergRunning = false;
+}
 });
 
 let isTextfieldOpen = false;
